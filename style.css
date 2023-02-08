@@ -9,7 +9,9 @@ html, body {
     overflow-x: hidden;
     background: #f2f4f8;
 }
-
+img {
+    width: 100%;
+}
 header.header {
     position: absolute;
     z-index: 9;
@@ -59,7 +61,7 @@ section.webbanner {
     display: flex;
     flex-flow: wrap;
     align-items: center;
-    background: url(assets/img/webbanner.jpg) no-repeat center center;
+    background: url(assets/img/cachoeira.mp4);
     background-size: cover;
 }
 section.webbanner:before {
@@ -68,6 +70,22 @@ section.webbanner:before {
     position: absolute;
     inset: 0;
     pointer-events: none;
+}
+.fundo-banner {
+    position: absolute;
+    inset: 0;
+    min-height: 100vh;
+}
+.fundo-banner .fundo-video {
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+}
+.fundo-banner .fundo-video video {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
 }
 
 .font h1 {
@@ -151,12 +169,32 @@ section.aba-what-is, section.aba-best, section.aba-our-products, section.aba-fee
 }
 .flex.icons-text .flex i {
     display: inline-block;
-    background: #242424;
-    height: 30px;
-    width: 30px;
-    align-self: center;
-    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    margin: 5px 0;
+    position: relative;
 }
+.flex.icons-text .flex i:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.flex.icons-text .flex:nth-of-type(1) i:before {
+    background-image: url(assets/svg/icon-10.svg);
+}
+.flex.icons-text .flex:nth-of-type(2) i:before {
+    background-image: url(assets/svg/icon-13.svg);
+}
+.flex.icons-text .flex:nth-of-type(3) i:before {
+    background-image: url(assets/svg/icon-11.svg);
+}
+.flex.icons-text .flex:nth-of-type(4) i:before {
+    background-image: url(assets/svg/icon-12.svg);
+}
+
 .link-buy {
     width: 100%;
     text-align: center;
@@ -172,18 +210,59 @@ section.aba-what-is, section.aba-best, section.aba-our-products, section.aba-fee
 
 .item-cases i {
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    background: #242424;
-    background-size: cover;
+    width: 35px;
+    height: 35px;
     margin: 5px 0;
+    position: relative;
 }
+.item-cases i:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.item-cases:nth-of-type(1) i:before {
+    background-image: url(assets/svg/icon-01.svg);
+}
+.item-cases:nth-of-type(2) i:before {
+    background-image: url(assets/svg/icon-02.svg);
+}
+.item-cases:nth-of-type(3) i:before {
+    background-image: url(assets/svg/icon-03.svg);
+}
+.item-cases:nth-of-type(4) i:before {
+    background-image: url(assets/svg/icon-04.svg);
+}
+.item-cases:nth-of-type(5) i:before {
+    background-image: url(assets/svg/icon-05.svg);
+}
+.item-cases:nth-of-type(6) i:before {
+    background-image: url(assets/svg/icon-06.svg);
+}
+.item-cases:nth-of-type(7) i:before {
+    background-image: url(assets/svg/icon-07.svg);
+}
+.item-cases:nth-of-type(8) i:before {
+    background-image: url(assets/svg/icon-08.svg);
+}
+
+
 
 .card-cases {
     padding: 30px 0;
 }
 
-.outlined-cards a {text-align: center;margin: 5px;color: #242424;font-size: 16px;line-height: 22px;font-weight: 500;width: 46%;}
+.outlined-cards a {
+    text-align: center;
+    margin: 5px;
+    color: #242424;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    width: 46%;
+}
 
 .outlined-cards .outlined {
     border: 1px solid currentColor;
@@ -193,7 +272,10 @@ section.aba-what-is, section.aba-best, section.aba-our-products, section.aba-fee
     margin: 20px 0;
     min-height: 150px;
 }
-
+.outlined-cards .outlined img {
+    max-width: 250px;
+    object-fit: cover;
+}
 .outlined-cards a span {
     display: block;
     color: #d6d63f;
